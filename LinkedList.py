@@ -11,13 +11,16 @@ class LinkedList(object):
             print("Name: {} Age: {} Weight {}".format(current.data.name,current.data.age,current.data.weight))
             current = current.next
     
-    def add_first(self,data):        
+    def add_first(self,data):
         if (self.head == None):
-            self.tail = self.head
-        add = Node(data)
-        add.data = data
-        add.next = self.head
-        self.head = add
+            add = Node(data)
+            add.data = data
+            self.head = self.tail = add
+        else:
+            add = Node(data)
+            add.data = data
+            add.next = self.head
+            self.head = add
 
     def add_last(self,data):
         add = Node(data)
